@@ -1,0 +1,281 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+%t\usepackage[showframe]{geometry}
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+%\usepackage{url}
+\usepackage[colorlinks=true,
+linkcolor=blue,
+urlcolor=blue]{hyperref}
+\usepackage{float}
+\usepackage{etaremune}
+\usepackage{wrapfig}
+
+\usepackage{attachfile}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+\addtolength{\voffset}{-40pt}
+\addtolength{\textheight}{20pt}
+
+%% make itemize more compact
+\usepackage{enumitem}
+
+\usepackage{layout}
+%% removing margins
+\setlength{\marginparwidth}{0pt} 
+\setlength{\voffset}{0pt}
+\setlength{\hoffset}{-0.5in}
+\setlength{\textwidth}{\paperwidth-1.5in}
+\setlength{\headsep}{0pt}
+
+%% decreasing space after new section
+%\usepackage{titlesec}
+%\titlespacing*{\section}{0pt}{0pt}{-4pt}
+
+%%% Custom sectioning}{sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\large
+        \usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\LARGE \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan}{optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[2]{\section*{\uppercase{#1} #2 }}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name}{birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name}{birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{6em}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par \vspace{-7pt}}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{White}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\PaperEntry}[7]{
+		\noindent #1, ``\href{#7}{#2}", \textit{#3} \textbf{#4}, #5 (#6).}
+
+
+\newcommand{\ArxivEntry}[3]{
+		\noindent #1, ``\href{http://arxiv.org/abs/#3}{#2}", \textit{{cond-mat/}#3}.}
+        
+\newcommand{\BookEntry}[4]{
+		\noindent #1, ``\href{#3}{#4}", \textit{#3}.}
+        
+\newcommand{\FundingEntry}[5]{
+        \noindent #1, ``#2", \$#3 (#4, #5).}
+
+\newcommand{\TalkEntry}[4]{
+		\noindent #1, #2, #3 #4}
+
+\newcommand{\ThesisEntry}[5]{
+		\noindent #1 -- #2 #3 ``#4" \textit{#5}}
+
+\newcommand{\CourseEntry}[3]{
+		\noindent \item{#1: \textbf{#2} \\ #3}}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document} 
+
+%\layout
+%% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.25\textwidth]{A_Grant_Schissler.JPG}
+%\end{wrapfigure}
+
+\MyName{A. Grant Schissler}
+\vspace{5pt}
+\textit{Inventing and disseminating statistical informatic methods to facilitate precision medicine}
+\vspace{-20pt}
+%\MySlogan{Curriculum Vitae}
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{}{}
+\vspace{-8pt}
+\PersonalEntry{Address}{\href{https://www.google.com/maps/place/Thomas+W.+Keating+Bioresearch+Building/@32.237991,-110.947283,15z/data=!4m2!3m1!1s0x0:0x30f9668cb910d410}{Keating Building}, Bio5 Institute, University of Arizona, Tucson, AZ}
+\PersonalEntry{Phone}{(404) 226-7844}
+\PersonalEntry{Mail}{\href{mailto:grantschissler@email.arizona.edu}{grantschissler@email.arizona.edu}}
+\PersonalEntry{Website/Blog}{\href{http://www.grantschissler.com}{www.grantschissler.com}}
+\PersonalEntry{GitHub}{\href{https://github.com/grizant}{github.com/grizant}}
+\vspace{-7pt}
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+\vspace{-7pt}
+\EducationEntry{PhD Candidate Statistical Informatics}{2012-current}{University of Arizona, Tucson, AZ}{\href{http://stat.bio5.org/}{Statistics Graduate Interdisciplinary Program (GIDP)}\\Minor in Genetics \\Advisors: Walter W. Piegorsch (Statistics) \& Yves A. Lussier (Biomedical Informatics)}
+\sepspace
+
+\EducationEntry{MS Applied Statistics}{2009-2011}{Kennesaw State University, Kennesaw, GA}{Honors Graduate (4.0 GPA)}
+\sepspace
+
+\EducationEntry{BS Applied Mathematics}{2002-2005}{Georgia Institute of Technology, Atlanta, GA}{Dean's List, Social/Personality Psychology Certificate}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Appointments}{}
+\vspace{-7pt}
+\EducationEntry{Research Assistant}{Fall 2014-}{{\href{http://lussierlab.org/}{Lussier Lab}}, {\href{http://cb2.uahs.arizona.edu/}{Center for Biomedical Informatics \& Biostatistics}}, {\href{http://www.arizona.edu/}{University of Arizona}}}{Developing statistical informatics methodology for precision medicine with Prof. Yves A. Lussier. Engaging in a truly interdisciplinary effort: working with an expert team of statisticians, physicians, engineers, biologists, geneticists, and computer scientists.}
+\sepspace
+
+\EducationEntry{Statistical Consultant}{2013-2014}{HTG Molecular, Tucson, AZ}{Worked with an interdisciplinary team to develop gene expression platforms, design and analyze experiments for process and technical improvement, analyze gene expression for clients, implement advanced \textsc{R} programming and visualization, communicate results to management, and utilize current research findings in a practical setting.}
+\sepspace
+
+\EducationEntry{Instructor/Teaching Assistant}{2012-2014}{University of Arizona}
+{Developed curriculum and served as an instructor of Preparation for University-Level Mathematics. Also taught Statistical Foundations in the Information Age including \textsc{R} programming.}
+\sepspace
+
+\EducationEntry{Mathematics Instructor/Athletic Coach}{2006-2012}{Tri-Cities High School, East Point, GA}
+{Designed and utilized best-practice pedagogy to teach nearly every secondary mathematics course offered in Georgia.  Specialized in AP Statistics. Implemented effective classroom management and motivational systems. Designed and delivered professional development for teachers. Displayed dynamic oral/written presentation skills.}
+
+%%% Papers
+%%% ------------------------------------------------------------
+
+\NewPart{Peer-Reviewed Journal Publications}{\href{https://scholar.google.com/citations?user=1H-SHoMAAAAJ&hl=en}{[Stats]}}
+\vspace{-7pt}
+\begin{etaremune}
+\item \PaperEntry{\underline{Schissler, A.G.}, Li, Q., Chen, J., Kenost, C., Anchour, I., Billheimer, D., Li, H., Piergorsch, W.W., and Lussier, Y.A.}{Analysis of aggregated cell-cell statistical distances within pathways unveils therapeutic-resistance mechanisms in circulating tumor cells}{Bioinformatics}{32}{12}{2016}{http://bioinformatics.oxfordjournals.org/content/32/12/i80.full}
+
+\item \PaperEntry{\underline{Schissler, A.G.}, Gardeux, V., Li, Q., Anchour, I., Li, H., Piergorsch, W.W., and Lussier, Y.A.}{Dynamic changes of RNA-sequencing expression for precision medicine: N-of-1-\textit{pathways} Mahalanobis distance within pathways of single subjects predicts breast cancer survival}{Bioinformatics}{31}{12}{2015}{http://bioinformatics.oxfordjournals.org/content/31/12/i293.full}
+
+\end{etaremune}
+
+%%% Computing Skills
+%%% ------------------------------------------------------------
+\NewPart{Computing Skills}{(13+ years experience)}
+\vspace{-7pt}
+%\EducationEntry{Software}{}{\textsc{N-of-1-pathways} Bioconductor R Package}{}
+
+\EducationEntry{Programming/Scripting Languages}{}{\textsc{R }(expert), \textsc{SHELL(Bash), PBS/LSF High-performance computing}}{}
+
+\EducationEntry{Statistical Packages}{}{\textsc{SPSS, SAS 9} (Certified Advanced Programmer)\textsc{, Minitab, R}}{}
+
+\EducationEntry{Operating Systems}{}{\textsc{Mac OS, Windows, Linux }}{}
+
+\EducationEntry{Reproducible Research/Publishing}{}{{\textsc{Emacs Org-mode, MS Word, Adobe Illustrator}, \LaTeX}}
+
+%%% Service
+%%% ------------------------------------------------------------
+
+\NewPart{Synergistic Activities/Associations}{}
+\vspace{-7pt}
+\begin{itemize}[noitemsep]
+\item Contributed to the University of Arizona Health Sciences' participation in the   \href{https://www.nih.gov/precision-medicine-initiative-cohort-program}{National Precision Medicine Initiative\circledR}  \hspace{3pt}(Feb 2016)
+\item Secondary Education Statistics Outreach: Collaboratively developed and delivered motivational statistics presentation for Saguaro High School statistics classes (29 Apr 2015), Catalina HS (29 Jan 2016), Sunnyside HS (12 Feb 2016), Bisbee HS (5 Apr 2016) 
+\item Member: American Statistical Association (ASA), International Society for Computational Biology (ISCB)
+\item Educator: Clear and Renewable Georgia Educator Certificate Mathematics (6-12)
+\vspace{-7pt}
+\end{itemize}
+
+%%% Talks 
+%%% ------------------------------------------------------------
+
+\NewPart{Invited Talks}{}
+\vspace{-7pt}
+\begin{etaremune}
+\item\TalkEntry{JSM-2016}{Chicago IL}{August 2016}{(Testing for differentially expressed pathways from within-subject matched pairs of RNA-seq data sets)}
+\item\TalkEntry{ISMB-2016}{Orlando FL}{July 2016}{(Statistical distances in CTCs)}
+\item\TalkEntry{First workshop on Interdisciplinary Statistics}{CIMAT Guanajuato Mexico}{June 2016}{(Statistical informatics for precision medicine)} 
+\item\TalkEntry{ISMB/ECCB-2015}{Dublin}{July 2015}{(N-of-1-\textit{pathways} MD)} 
+\item\TalkEntry{2016 Mathematics Educator Appreciation Day}{Tucson}{23 Jan 2016}{(Incorporating Quantitatively-Talented and Underrepresented High School Students in Arizona into the Biostatistics Community)} 
+\vspace{-7pt}
+\end{etaremune}
+
+\NewPart{Seminars and Colloquia}{}
+
+\vspace{-7pt}
+\begin{etaremune}
+\item\TalkEntry{University of Arizona Biostatistics Seminar}{\textit{Statistical Development of N-of-1-pathways MD}}{17 Feb 2016}{}
+\item\TalkEntry{University of Arizona Statistics Student Meeting}{\textit{Reproducible Research through GNU Emacs Org-mode}}{18 Feb 2014}{}
+\vspace{-7pt}
+\end{etaremune}
+
+\NewPart{Poster sessions and Showcases}{}
+\vspace{-7pt}
+\begin{etaremune}
+\item\TalkEntry{University of Arizona Student Showcase}{\textit{N-of-1-pathways for Precision Medicine}}{24 Feb 2016}{}
+\item\TalkEntry{GIDP Student Research Showcase}{\textit{N-of-1-pathways for Precision Medicine}}{10 Dec 2015}{}
+\vspace{-7pt}
+\end{etaremune}
+
+%%% Awards \& Grants 
+%%% ------------------------------------------------------------
+
+\NewPart{Awards \& Grants}{}
+\vspace{-7pt}
+\begin{itemize}[noitemsep]
+\item 2016 \href{http://gpsc.arizona.edu/travel-grants}{GPSC Travel Grant}, Merit-based travel grant for JSM 2016 in Chicago, IL
+\item 2016 \href{https://www.iscb.org/ismb2016-submission/ismb2016-travel-fellowship-2}{ISMB Travel Fellowship}, Merit-based travel fellowship for ISMB 2016 in Orlando, FL
+\item 2016 \href{http://gidp.arizona.edu/carter-award/recipients}{HE Carter Travel Award}, Graduate Interdisciplinary Programs, University of Arizona 
+\item 2015 \href{http://gidp.arizona.edu/carter-award/recipients}{HE Carter Travel Award}, Graduate Interdisciplinary Programs, University of Arizona 
+\item 2015 \href{http://stattrak.amstat.org/2014/03/01/grant-opportunity}{ASA Biometrics Section Funding of Proposed Strategic Initiative}:  Incorporating quantitatively-talented and underrepresented high school students in Arizona into the biostatistics community. - Grant Co-Investigator
+\vspace{-7pt}
+\end{itemize}
+
+\NewPart{Teaching}{}
+\vspace{-7pt}
+\textit{@ U. of Arizona:}
+\begin{itemize}[noitemsep]
+\item[]
+\vspace{-15pt}
+
+\CourseEntry{Fall 2012/2013}{SAS100AX: Preparation for University Level Mathematics}{\textit{Instructor}: Guided first year students to became independent learners through explicit instruction of metacognition, mathematics learning strategies, performance traits, and rapid skill acquisition. Designed ``flipped'' classroom curriculum to maximize student learning and engagement. Formerly behind students were retained at much higher rates than on-level students.}
+\CourseEntry{Fall 2012}{ISTA116: Statistical Foundations in the Information Age}{\textit{Teaching Assistant}: Led a weekly statistics laboratory. We focused on a broad range of applications with computing solutions via \textsc{R}.}
+
+\end{itemize}
+
+\noindent\textit{@ Tri-Cities High School, Math Dept.:}
+
+\begin{itemize}
+\item[]
+\vspace{-24pt}
+
+\CourseEntry{2008-2012}{AP Statistics}{\textit{Instructor}: Received best-practice training from Paul Myers and Josh Tabor among others. Designed and implemented ``flipped'' classroom curriculum. Grew the statistics program by gaining stakeholder interest, resulting in more than a 50\% increase in student enrollment. Increased AP exam success and student awareness of statistical careers. Spearheaded data-driven decision making for student/school initiatives.}
+\CourseEntry{2006-2012}{Other Secondary Math Courses}{\textit{GPS Advanced Algebra, Discrete Math, Trigonometry, Geometry, Algebra I-III:} \\Taught every secondary course available except AP Calculus. Specialized in teaching 11$^{th}$ grade students to prepare them for the Georgia High School Graduation Test (GHSGT). The GHSGT is a major determinant of student and school-wide achievement. Designed and led after-school tutorial programs for GHSGT.}
+
+\end{itemize}
+
+\end{document}
