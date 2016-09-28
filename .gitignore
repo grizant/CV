@@ -1,1 +1,8 @@
 .DS_Store
+auto*
+cv_schissler.aux
+cv_schissler.fdb_latexmk
+cv_schissler.fls
+cv_schissler.log
+cv_schissler.out
+cv_schissler.pdf
