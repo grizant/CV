@@ -1,5 +1,5 @@
 \documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
-							
+% Render in R using tinytex::pdflatex( 'cv_schissler.tex' )
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[protrusion=true,expansion=true]{microtype}
@@ -128,7 +128,8 @@ urlcolor=blue]{hyperref}
 
 \MyName{A.~Grant~Schissler}
 \vspace{5pt}
-\textit{Developing and disseminating statistical informatic methods to facilitate precision medicine}
+%% \textit{Developing and disseminating statistical informatic methods to facilitate precision medicine}
+\textit{Creating statistical concepts, models, and tools for better science and more precise medicine}
 \vspace{-20pt}
 %\MySlogan{Curriculum Vitae}
 
@@ -140,7 +141,7 @@ urlcolor=blue]{hyperref}
 \PersonalEntry{Phone}{(404)~226-7844}
 \PersonalEntry{Mail}{\href{mailto:aschissler@unr.edu}{aschissler@unr.edu}}
 \PersonalEntry{Website/Blog}{\href{http://www.grantschissler.com}{www.grantschissler.com}}
-\PersonalEntry{GitHub}{\href{https://github.com/grizant}{github.com/grizant}}
+\PersonalEntry{GitHub}{\href{https://github.com/SchisslerGroup}{github.com/SchisslerGroup}}
 \vspace{-7pt}
 %%% Education
 %%% ------------------------------------------------------------
@@ -190,7 +191,7 @@ urlcolor=blue]{hyperref}
 % \begin{etaremune}
 \begin{enumerate}
 
-  \item \PaperEntry{Tin Nguyen, Adib Shafi, Nguyen Tuan-Minh, \underline{A.~Grant Schissler}, and Sorin Draghici}{NBIA:~a network-based integrative analysis framework - applied to pathway analysis}{}{Scientific Reports}{}{accepted}{}
+  \item \PaperEntry{Tin Nguyen, Adib Shafi, Nguyen Tuan-Minh, \underline{A.~Grant Schissler}, and Sorin Draghici}{NBIA:~a network-based integrative analysis framework - applied to pathway analysis}{Scientific Reports}{10}{1}{2020}{https://www.nature.com/articles/s41598-020-60981-9}
   
 \item \PaperEntry{\underline{A.~Grant Schissler}, Dillon Aberasturi, Colleen Kenost and Yves A.~Lussier}{A single-subject method to detect pathways enriched with alternatively spliced genes}{Frontiers in Genetics:~Current Trends in Translational Bioinformatics}{10}{414}{2019}{https://www.frontiersin.org/articles/10.3389/fgene.2019.00414/full}
   
@@ -227,39 +228,40 @@ urlcolor=blue]{hyperref}
 % \begin{etaremune}
 \begin{enumerate}
 
-\item \PaperEntry{Jingyu Liu, Walter W.~Piegorsch, \underline{A.~Grant Schissler}, Rachel R.~McCaster, and Susan L.~Cutter}{Extending spatial adjustments for benchmark risk analysis to non-spatial autocorrelation, with application to natural hazard risk assessment}{}{Journal of Applied Statistics}{}{under consideration}{}
+\item \PaperEntry{Jingyu Liu, Walter W.~Piegorsch, \underline{A.~Grant Schissler}, Rachel R.~McCaster, and Susan L.~Cutter}{Extending spatial adjustments for benchmark risk analysis to non-spatial autocorrelation, with application to natural hazard risk assessment}{}{Journal of Applied Statistics}{}{submitted Feb 2020}{}
 
-  \item \PaperEntry{Austin Witt$^{\dagger}$, Taylor Gurnea$^{\dagger}$, Franklin Fuchs$^{\dagger}$, Sahar Sedigh$^{\dagger}$, and \underline{A.~Grant Schissler}}{Assessing an active learning-based curriculum in high-stakes medical student achievement examinations with limited data via Bayesian statistics}{}{American Medical Student Research Journal}{}{submitted Jul 21, 2020}{}
-  
+  \item \PaperEntry{Austin Witt$^{\dagger}$, Taylor Gurnea$^{\dagger}$, Franklin Fuchs$^{\dagger}$, Sahar Sedigh$^{\dagger}$, and \underline{A.~Grant Schissler}}{Assessing an active learning-based curriculum in high-stakes medical student achievement examinations with limited data via Bayesian statistics}{}{American Medical Student Research Journal}{}{submitted Jul 2020}{}
+
+  \item \PaperEntry{Alexander D. Knudson$^{\dagger}$, Tomasz J. Kozubowski, Anna K. Panorska and \underline{Alfred G.~Schissler}}{A flexible multivariate model for high-dimensional correlated count data analysis and simulation}{}{Journal of Statistical Distributions and Applications}{}{submitted Oct 2020}{}
+
 \end{enumerate}
 
-%% committed projects
-\NewPart{Creative works near-submission}{}
-\vspace{-7pt}
-% \begin{etaremune}
-
-\begin{enumerate}
-  
-\item \PaperEntry{\underline{A.~Grant Schissler}, Alex Knudson$^{\dagger}$, Richard DL Foote, Tomasz Kozubowski, and Anna Panorska}{Simulating Dependent High-Dimensional Data via the bigsimr R package, with an Application to RNA-sequencing data}{}{Journal of Computational and Applied Mathematics}{}{Sep 30 2020}{}
-
-\item \PaperEntry{Andrey Sarantsev and \underline{A.~Grant Schissler}}{Partisan Lean Of States:~Electoral College And Popular Vote}{}{Statistics and Public Policy}{}{expected Feb 2020}{}
-  
-\item \PaperEntry{Alex Knudson$^{\dagger}$, Allie Scurry$^{\dagger}$, \underline{A.~Grant Schissler}, and Jiang Fang}{A modern approach to Bayesian hierarchical modeling of the psychometric function}{}{Statistical Analysis and Data Mining:~The ASA Data Science Journal}{}{expected May 2020}{}
-
-\item \PaperEntry{\underline{A.~Grant Schissler} and Alex Knudson$^{\dagger}$}{A high-dimensional fully Bayesian multilevel survival analysis to discover prognostic biomarkers for underrepresented patients}{}{Journal of the American Statistical Association}{}{}{}
-
-\item \PaperEntry{Erick Luerken, Alex Knudson$^{\dagger}$, Juli Petereit, \underline{A.~Grant Schissler}}{An empirical Bayesian approach to detecting single-subject differentially expressed genes and pathways for precision oncology}{}{Frontiers in Oncology}{}{}{}
-
-  \item \PaperEntry{\underline{A.~Grant Schissler}, Juli Petereit, and Yves A. Lussier}{Investigating the prognostic value of single-subject differentially expressed genes and pathways}{}{Journal of the American Medical Informatics Association}{}{}{}
-
-  % * = joint first authorship
-  % * = Not peer reviewed
-  % \end{etaremune}
-
-  $\dagger$ = student author
-  
-\end{enumerate}
-
+% \NewPart{Creative works near-submission}{}
+% \vspace{-7pt}
+% % \begin{etaremune}
+% 
+% \begin{enumerate}
+%   
+% \item \PaperEntry{\underline{A.~Grant Schissler}, Alex Knudson$^{\dagger}$, Richard DL Foote, Tomasz Kozubowski, and Anna Panorska}{Simulating Dependent High-Dimensional Data via the bigsimr R package, with an Application to RNA-sequencing data}{}{Journal of Computational and Applied Mathematics}{}{Sep 30 2020}{}
+% 
+% \item \PaperEntry{Andrey Sarantsev and \underline{A.~Grant Schissler}}{Partisan Lean Of States:~Electoral College And Popular Vote}{}{Statistics and Public Policy}{}{expected Feb 2020}{}
+%   
+% \item \PaperEntry{Alex Knudson$^{\dagger}$, Allie Scurry$^{\dagger}$, \underline{A.~Grant Schissler}, and Jiang Fang}{A modern approach to Bayesian hierarchical modeling of the psychometric function}{}{Statistical Analysis and Data Mining:~The ASA Data Science Journal}{}{expected May 2020}{}
+% 
+% \item \PaperEntry{\underline{A.~Grant Schissler} and Alex Knudson$^{\dagger}$}{A high-dimensional fully Bayesian multilevel survival analysis to discover prognostic biomarkers for underrepresented patients}{}{Journal of the American Statistical Association}{}{}{}
+% 
+% \item \PaperEntry{Erick Luerken, Alex Knudson$^{\dagger}$, Juli Petereit, \underline{A.~Grant Schissler}}{An empirical Bayesian approach to detecting single-subject differentially expressed genes and pathways for precision oncology}{}{Frontiers in Oncology}{}{}{}
+% 
+%   \item \PaperEntry{\underline{A.~Grant Schissler}, Juli Petereit, and Yves A. Lussier}{Investigating the prognostic value of single-subject differentially expressed genes and pathways}{}{Journal of the American Medical Informatics Association}{}{}{}
+% 
+%   % * = joint first authorship
+%   % * = Not peer reviewed
+%   % \end{etaremune}
+% 
+%   $\dagger$ = student author
+%   
+% \end{enumerate}
+ 
 %%% Papers in preparation
 %%% ------------------------------------------------------------
 
@@ -305,11 +307,20 @@ urlcolor=blue]{hyperref}
 
 %Direct(ed) research (or consulting activities) and provided/organized financial support (as RAs) to six mathematics and statistics graduate students and one undergraduate student:
 
+\noindent \textbf{Direct(ed) PhD thesis work:}
+
+\begin{itemize}[noitemsep]
+
+  \item \ThesisEntry{Erick Luerken}{PhD in Statistics \& Data Science}{}{Bayesian Predictive Modeling of High-Resolution NFL Data}{ongoing}
+
+%\end{etaremune}
+  \end{itemize}
+
 \noindent \textbf{Direct(ed) MS thesis work:}
 
 \begin{itemize}[noitemsep]
 
-  \item \ThesisEntry{Alex Knudson}{MS in Statistics \& Data Science}{}{Bayesian Multi-level Modeling of Pyschometric Data}{expected May 2020}
+  \item \ThesisEntry{Alex Knudson}{MS in Statistics \& Data Science}{}{A Bayesian Multilevel Model for the Psychometric Function using R and Stan}{Dec 2020}
 
 %\end{etaremune}
   \end{itemize}
@@ -320,9 +331,15 @@ urlcolor=blue]{hyperref}
 
         \item \ThesisEntry{Lin Li}{PhD in Civil and Environmental Engineering}{}{Biomass Density-Function Relationships in Activated Sludge Process}{May 2019}
 
-\item \ThesisEntry{Charles Amponsah}{PhD in Statistics \& Data Science}{}{A Bivariate Gamma Mixture Discrete Pareto Distribution}{expected 2022}
+\item \ThesisEntry{Trevor Faske}{PhD in Ecology, Evolution, and Conservation Biology}{}{Who framed Rubber Rabbitbrush? genetics, environment, or both}{expected 2022}
+          
+\item \ThesisEntry{Charles Amponsah}{PhD in Statistics \& Data Science}{}{A Bivariate Gamma Mixture Discrete Pareto Distribution}{ongoing}
     
-  \item \ThesisEntry{Trevor Faske}{PhD in Ecology, Evolution, and Conservation Biology}{}{Who framed Rubber Rabbitbrush? genetics, environment, or both}{expected 2022}
+% \item \ThesisEntry{Matthew Ohemeng}{PhD in Statistics \& Data Science}{}{TBD}{ongoing}
+
+\item \ThesisEntry{Francesco Zuniga}{PhD in Statistics \& Data Science}{}{TBD}{ongoing}
+
+  \item \ThesisEntry{Ilaria Vinci}{PhD in Statistics \& Data Science}{}{TBD}{ongoing}
 
   \end{itemize}
   
@@ -337,9 +354,12 @@ urlcolor=blue]{hyperref}
 
   \item \ThesisEntry{James Schnebly}{MS in Computer Science and Engineering}{}{Distilling Public Data from Multiple Sources for Cybersecurity Applications}{May 2020}
 
-          \item \ThesisEntry{Cheyenne Acevedo}{MS in Natural Resources \& Environmental Science}{}{Hierarchical Modeling of Spatial Data to Estimate Abundance of Sage-Grouse in Nevada}{expected Summer 2020}
+  \item \ThesisEntry{Samantha Faulstich}{MS in Atmospheric Science}{}{Evaluating Fire Emissions Inventories in the Western U.S. With the Development of a Bayesian Model}{expected Spring 2021}
+    
+  \item \ThesisEntry{Cheyenne Acevedo}{MS in Natural Resources \& Environmental Science}{}{Hierarchical Modeling of Spatial Data to Estimate Abundance of Sage-Grouse in Nevada}{expected Summer 2021}
 
-  
+  \item \ThesisEntry{Morgan Byrne}{MS in Natural Resources \& Environmental Science}{}{Bayesian Modeling of Mercury Abundance in Ducks}{expected Summer 2023}
+
   \end{itemize}
 
     \noindent \textbf{Direct(ed) undergraduate honors thesis:}
@@ -356,7 +376,7 @@ urlcolor=blue]{hyperref}
 %%% ------------------------------------------------------------
 \NewPart{Computing Skills}{}
 \vspace{-7pt}
-\EducationEntry{Software creator/maintainer \href{http://www.lussiergroup.org/publications/N-of-1-pathways}{http://www.lussiergroup.org}}{}{\textsc{nof1} R Package}{}
+\EducationEntry{Software creator/maintainer \href{http://www.lussiergroup.org/publications/N-of-1-pathways}{http://www.lussiergroup.org}}{}{\textsc{nof1} R Package, \textsc{bigsimr} R Package }{}
 
 \EducationEntry{Programming/Scripting Languages}{}{\textsc{R }(expert), \textsc{SHELL(Bash), PBS/LSF High-performance computing, python}}{}
 
@@ -399,6 +419,12 @@ urlcolor=blue]{hyperref}
 % \begin{etaremune}
 \begin{enumerate}
 
+\item \TalkEntry{CMSTATS 2020$^{\dagger}$}{virtual}{Dec 2020}{(Simulating Ultra High-Dimensional Multivariate Data using the bigsimr R package)}
+
+\item \TalkEntry{CMAS 2020$^{\ddag}$}{virtual}{Oct 2020}{(Evaluating Fire Emissions Inventories in the Western U.S. With the Development of a Bayesian Model)}
+  
+\item \TalkEntry{ESCO 2020$^{\dagger}$}{virtual}{Jun 2020}{(Simulating Ultra High-Dimensional Multivariate Data using the bigsimr R package)}
+  
 \item \TalkEntry{City of Hope Cancer Center$^{\dagger}$}{London, GB}{Jan 2020}{(Bespoke computational oncology:~How to conduct statistical inference when convention methods fail)}
   
 \item \TalkEntry{CMSTATS 2019$^{\dagger}$}{London, GB}{Dec 2019}{(On Simulating Ultra High-Dimensional Multivariate Data)}
@@ -431,8 +457,10 @@ urlcolor=blue]{hyperref}
 \vspace{-7pt}
 % \end{etaremune}
 
-* = Joint work was highlighted, but another author presented.\\
-$\dagger=$ Invited talk
+* = Joint work, but another author presented.\\
+$\dagger=$ Invited talk.
+$\ddag=$ Student author presented.
+
 \end{enumerate}
 
 \NewPart{Seminars and Colloquia}{}
@@ -441,7 +469,11 @@ $\dagger=$ Invited talk
 % \begin{etaremune}
 \begin{enumerate}
 
-\item\TalkEntry{Guest Lecture for Applied Regression 757}{Reno, NV}{Nov 2019}{(Simulation for checking statistical procedures and model fits)}
+\item\TalkEntry{Guest Lecture for MATH/STAT 794 Graduate Seminar}{Reno, NV}{Nov 2020}{(Computational resources \& tools)}
+
+\item\TalkEntry{Guest Lecture for STAT 758 Time Series}{Reno, NV}{Nov 2020}{(Bayesian modeling of 1000 years of cherry blossoms)}
+  
+\item\TalkEntry{Guest Lecture for STAT 757 Applied Regression}{Reno, NV}{Nov 2019}{(Simulation for checking statistical procedures and model fits)}
   
 \item\TalkEntry{UNR Okapi High-Performance Computing Workshop}{Reno, NV}{Nov 2019}{(Massive R simulations using Emacs, Miniconda, and slurm)}
   
@@ -555,6 +587,14 @@ $\dagger=$ Invited talk
 \begin{itemize}[noitemsep]
 \item[]
 \vspace{-15pt}
+
+\CourseEntry{Fall 2020}{STAT 152:~Introduction to Statistics}{Led a large course offering of Introduction to Statistics for non-STEM majors. Used active learning strategies such as Zoom breakout rooms and software-based statistical calculation in Pearson StatCrunch. Content was classically motivated using normal theory for estimation and testing, but focus was on the intuition rather than hand computation.
+
+\begin{itemize}
+\item \emph{\small{``Professor Schissler was very good at teaching this subject. I really enjoyed attending lectures because he was always wanting to communicate with the lower percentage of students that attended lectures, and wanted us to know that we should feel comfortable asking any questions that we had. He was always ready and able to help his students with any struggles they were having. He is also very good at teaching this topic because he would give examples in class, as well as relate to real world settings.''}}
+\item \emph{\small{``Professor Schissler is probably the most genuine, kindhearted professor I have ever had. He always checked in with how we were all doing given the state of things and was so sincere about his concern for our wellbeing and how that translated into our success in his course. He did a great job of not beating around the bush with the content but rather just teaching us what we needed to complete homework, quizzes, and exams. SO GREAT.''}}
+\end{itemize}
+}{} 
 
 \CourseEntry{Spring 2019}{STAT 446/646:~Introduction to Bayesian Statistics}{Led an undergraduate/graduate hybrid course in an introduction to Bayesian statistics. Proposed and developed the course using activity learning activities. Statistical inference using Bayes’ Theorem. Topics include Bayesian/frequentist comparison, posterior analysis for continuous and discrete random variables, prior specification, Bayesian regression, multivariate inference, and posterior sampling through Markov Chain Monte Carlo.
 
