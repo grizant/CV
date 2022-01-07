@@ -1,0 +1,412 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+% Render in R using tinytex::pdflatex( 'cv_schissler.tex' )
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+%t\usepackage[showframe]{geometry}
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+%\usepackage{url}
+\usepackage[colorlinks=true,
+linkcolor=blue,
+urlcolor=blue]{hyperref}
+\usepackage{float}
+\usepackage{etaremune}
+\usepackage{wrapfig}
+
+\usepackage{attachfile}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+\addtolength{\voffset}{-40pt}
+\addtolength{\textheight}{20pt}
+
+%% make itemize more compact
+\usepackage{enumitem}
+
+\usepackage{layout}
+%% removing margins
+\setlength{\marginparwidth}{0pt} 
+\setlength{\voffset}{0pt}
+\setlength{\hoffset}{-0.5in}
+\setlength{\textwidth}{\paperwidth-1.5in}
+\setlength{\headsep}{0pt}
+
+%% decreasing space after new section
+%\usepackage{titlesec}
+%\titlespacing*{\section}{0pt}{0pt}{-4pt}
+
+%%% Custom sectioning}{sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\large
+        \usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\LARGE \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan}{optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[2]{\section*{\uppercase{#1} #2 }}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name}{birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name}{birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{6em}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par \vspace{-7pt}}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{White}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\PaperEntry}[7]{
+		\noindent #1, ``\href{#7}{#2}", \textit{#3} \textbf{#4}, #5 (#6).}
+
+
+\newcommand{\ArxivEntry}[3]{
+		\noindent #1, ``\href{http://arxiv.org/abs/#3}{#2}", \textit{{cond-mat/}#3}.}
+        
+\newcommand{\BookEntry}[4]{
+		\noindent #1, ``\href{#3}{#4}", \textit{#3}.}
+        
+\newcommand{\FundingEntry}[5]{
+        \noindent #1, ``#2", \$#3 (#4, #5).}
+
+\newcommand{\TalkEntry}[4]{
+		\noindent #1, #2, #3 #4}
+
+\newcommand{\ThesisEntry}[5]{
+		\noindent #1 -- #2 #3 ``#4" \textit{#5}}
+
+\newcommand{\CourseEntry}[3]{
+		\noindent \item{#1: \textbf{#2} \\ #3}}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document} 
+
+%\layout
+%% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.25\textwidth]{A_Grant_Schissler.JPG}
+%\end{wrapfigure}
+
+\MyName{A.~Grant~Schissler}
+\vspace{5pt}
+%% \textit{Developing and disseminating statistical informatic methods to facilitate precision medicine}
+%% \textit{Creating statistical concepts, models, and tools for better science and more precise medicine}
+\vspace{-20pt}
+%\MySlogan{Curriculum Vitae}
+
+%%% Personal details
+%%% ------------------------------------------------------------
+%% \NewPart{}{}
+\vspace{-8pt}
+\PersonalEntry{Phone}{(404)~226-7844}
+\PersonalEntry{Mail}{\href{mailto:grant.schissler@gmail.com}{grant.schissler@gmail.com}}
+\PersonalEntry{GitHub}{\href{https://github.com/SchisslerGroup}{github.com/SchisslerGroup}}
+\vspace{-7pt}
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+\vspace{-7pt}
+\EducationEntry{PhD Statistics}{2012-2017}{University of Arizona, Tucson, AZ, \href{http://stat.arizona.edu}{Statistics Graduate Interdisciplinary Program (GIDP)}}{Advisors:~Walter W.~Piegorsch (Statistics) \& Yves A.~Lussier (Informatics)}
+\sepspace
+
+\EducationEntry{MS Applied Statistics}{2009-2011}{Kennesaw State University, Kennesaw, GA}{Honors Graduate (4.0 GPA)}
+\sepspace
+
+\EducationEntry{BS Applied Mathematics}{2002-2005}{Georgia Institute of Technology, Atlanta, GA}{Dean's List, Social/Personality Psychology Certificate}
+
+%%% Research areas
+%%% ------------------------------------------------------------
+\NewPart{Research areas}{}
+\vspace{-7pt}
+
+\emph{Bayesian models/computation/prediction, empirical Bayesian methods, multilevel/hierarchical models, variance reduction, survival analysis, high-dimensional data analysis/computation/simulation, large-scale hypothesis testing, information theory, causal inference, single-subject inference/n-of-1 experiments, multivariate statistics, statistical machine learning, clustering, big data, data visualization, high-throughput data, time series analysis, zero-inflated models}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+\vspace{-7pt}
+
+\EducationEntry{Assistant Professor of Statistics}{2017-current}{{\href{https://www.unr.edu/}{The University of Nevada, Reno}}, {\href{https://www.unr.edu/math/}{Department of Mathematics \& Statistics}}, {\href{http://www.unr.edu/}{University of Nevada, Reno}}}{
+  \begin{itemize}
+  \item Created/leading an interdisciplinary research team in statistics and applications.
+  \item Served as Principal Investigator for a sponsored project.
+   \item Developed project management strategies combining Kanban/Agile/Action Method/GTD philosophies.
+    \item Mentored and supervised master's and doctoral statistics \& data science students.
+    \item Provided statistical expertise and guidance for over 15 graduate student theses and dissertations.
+    \item Authored and published over 10 peer-reviewed journal articles and book chapters in 4.5 years.
+    \item Gave over 30 conference presentations, talks, and seminars in 4.5 years.
+    \item Created and co-authored 2 software packages in R, Python, and Julia.
+    \item Taught over 10 undergraduate \& graduate courses in statistical theory, computation, and applications.
+    \item Developed and taught the first Bayesian statistics course in the Nevada Higher System of Education.
+      \item Affiliated faculty with the Renown Institute of Cancer.
+  \end{itemize}}
+\sepspace
+
+\EducationEntry{Research Assistant}{2014-2017}{{\href{http://lussierlab.org/}{Lussier Group}}, {\href{http://cb2.uahs.arizona.edu/}{Center for Biomedical Informatics \& Biostatistics}}, {\href{http://www.arizona.edu/}{University of Arizona}}}{
+  \begin{itemize}
+  \item Developed statistical informatics methodology for precision medicine.
+  \item Applied statistical machine learning to cancer survival.
+    \item Developed innovative n-of-1 experimental design frameworks.
+    \item Authored and published 7 peer-reviewed journal articles 3.5 years.
+    \item Gave over 10 conference presentations, talks, and seminars in 3.5 years.
+    \item Mentored undergraduate \& secondary school reseachers.
+    \item Created and authored 1 software packages in R.
+      \item Communicated our work to the public. E.g., See this \href{http://cb2.uahs.arizona.edu/news/dr-lussier-and-grant-schissler-speak-big-data-kgun9-local-news}{link} (@1:30 minutes) filmed by Tucson ABC-affiliate KGUN9.
+    \end{itemize}}
+\sepspace
+
+\vspace{-10pt}
+
+\EducationEntry{Biostatistician \& Statistical Consultant}{2013-2014}{{\href{https://www.htgmolecular.com/}{HTG Molecular}}}{
+  \begin{itemize}
+  \item Developed market-competitive high-throughput gene expression analytics.
+  \item Began as an intern and was retained as a consultant.
+  \item Worked in an team of biostatisticians, cancer biologists, geneticists, engineers, and computer scientists.
+  \item Conducted data analyses/visualization, biotechnology data quality control, and software engineering.
+  \item Developed and communicated recommendations for business leaders.
+    \item Developed dynamic reporting pipelines for customers.
+\end{itemize}}
+\sepspace
+
+\EducationEntry{Instructor/Teaching Assistant}{2012-2014}{University of Arizona}{
+\begin{itemize}
+\item Developed curriculum and served as an instructor of Preparation for University-Level Mathematics.
+  \item Taught Statistical Foundations in the Information Age including R programming.
+  \end{itemize}}
+\sepspace
+
+\EducationEntry{Mathematics Instructor/Athletic Coach}{2006-2012}{Tri-Cities High School, East Point, GA}{
+  \begin{itemize}
+  \item Taught nearly every secondary mathematics course offered in the State of Georgia.
+  \item Specialized in AP Statistics.
+  \item Implemented effective classroom management and motivational systems.
+  \item Designed and delivered professional development for teachers.
+   \item Led the Boys Tennis Team to first-ever State Playoff apperance.
+\end{itemize}}
+
+%%% Accepted Papers
+%%% ------------------------------------------------------------
+
+\NewPart{Peer-Reviewed Journal Publications}{\href{https://scholar.google.com/citations?user=1H-SHoMAAAAJ&hl=en}{[Stats]}}
+\vspace{-7pt}
+% \begin{etaremune}
+\begin{enumerate}
+
+  \item \PaperEntry{Austin Witt$^{\dagger}$, Taylor Gurnea$^{\dagger}$, Franklin Fuchs$^{\dagger}$, Sahar Sedigh$^{\dagger}$, and \underline{A.~Grant Schissler}}{Estimating the impact of self-directed parallel curriculum on United States Medical Licensing Exam Step 1 performance.}{American Medical Student Research Journal}{}{}{in press, accepted 15 Aug 2021}{}
+  
+\item \PaperEntry{Jingyu Liu, Walter W.~Piegorsch, \underline{A.~Grant Schissler}, Rachel R.~McCaster, and Susan L.~Cutter}{Adjusting statistical benchmark risk analysis to account for non-spatial autocorrelation, with application to natural hazard risk assessment}{Journal of Applied Statistics}{}{}{in press , accepted 12 Mar 2021}{}
+
+  \item \PaperEntry{Alexander D. Knudson$^{\dagger}$, Tomasz J. Kozubowski, Anna K. Panorska and \underline{Alfred G.~Schissler}}{A flexible multivariate model for high-dimensional correlated count data analysis and simulation}{Journal of Statistical Distributions and Applications}{8}{6}{2021}{https://rdcu.be/cgTkg}
+
+  \item \PaperEntry{Tin Nguyen, Adib Shafi, Nguyen Tuan-Minh, \underline{A.~Grant Schissler}, and Sorin Draghici}{NBIA:~a network-based integrative analysis framework - applied to pathway analysis}{Scientific Reports}{10}{1}{2020}{https://www.nature.com/articles/s41598-020-60981-9}
+  
+\item \PaperEntry{\underline{A.~Grant Schissler}, Dillon Aberasturi, Colleen Kenost and Yves A.~Lussier}{A single-subject method to detect pathways enriched with alternatively spliced genes}{Frontiers in Genetics:~Current Trends in Translational Bioinformatics}{10}{414}{2019}{https://www.frontiersin.org/articles/10.3389/fgene.2019.00414/full}
+  
+    \item \PaperEntry{Xiang Li$^{\dagger}$, \underline{A.~Grant Schissler}, Rui Wu, Lee Barford, and Frederick C.~Harris, Jr.}{A graphical processing unit accelerated NORmal-To-Anything algorithm for high dimensional multivariate simulation}{Advances in Intelligent Systems and Computing:~Proceedings of ITNG}{46}{800}{2019}{https://link.springer.com/chapter/10.1007/978-3-030-14070-0_46}
+  
+\item \PaperEntry{Samir R. Zaim$^{*}$, Qike Li$^{*}$, \underline{A. Grant Schissler}$^{*}$, and Yves A. Lussier}{Emergence of pathway-level composite biomarkers from converging gene set signals of heterogeneous transcriptomic responses}{Biocomputing}{2018}{484-495}{2018}{https://www.worldscientific.com/doi/abs/10.1142/9789813235533_0044}
+  
+\item \PaperEntry{Jingyu Liu, Walter W.~Piegorsch, \underline{A.~Grant Schissler} and Susan L.~Cutter}{Autologistic modeling in quantitative risk analysis, with applications to urban vulnerability assessment of terrorism outcomes}{Journal of the Royal Statistical Society:~Series A}{181}{3}{2018}{http://dx.doi.org/10.1111/rssa.12323}
+  
+  \item \PaperEntry{\underline{A.~Grant Schissler}, Walter W.~Piegorsch and Yves A.~Lussier}{Testing for differentially expressed genetic pathways with single-subject N-of-1 data in the presence of inter-gene correlation}{Statistical Methods in Medical Research}{27}{12}{2018}{http://journals.sagepub.com/doi/10.1177/0962280217712271}
+
+\item \PaperEntry{Francesca Vitali, Qike Li, \underline{A.~Grant Schissler}, Joanne Berghout, Colleen Kenost, Yves A.~Lussier}{Developing a 'personalome' for precision medicine: emerging methods that compute clinically interpretable effect sizes from single-subject omics}{Briefings in Bioinformatics}{bbx149}{}{2017}{https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbx149/4758622}
+
+  \item \PaperEntry{V Gardeux$^{*}$, J Berghout$^{*}$, I Achour$^{*}$, \underline{AG Schissler}$^{*}$, Q Li, C Kenost, J Li, Y Shang, A Bosco, D Saner, MJ Halonen, DJ Jackson, H Li, FD Martinez, and YA Lussier}{A genome-by-environment interaction classifier for precision medicine:~personal transcriptome response to rhinovirus identifies children prone to asthma exacerbations
+}{Journal of the American Medical Informatics Association:~JAMIA}{ocx069}{}{2017}{https://academic.oup.com/jamia/article-abstract/doi/10.1093/jamia/ocx069/4004728/A-genome-by-environment-interaction-classifier-for?redirectedFrom=fulltext}
+
+\item \PaperEntry{Qike Li$^{*}$, \underline{A.~Grant Schissler$^{*}$}, Vincent Gardeux, Ikbel Achour, Colleen Kenost, Joanne Berghout, Haiquan Li, Hao Helen Zhang and Yves A.~Lussier}{N-of-1-\emph{pathways} MixEnrich: advancing precision medicine via single-subject analysis in discovering dynamic changes of transcriptomes}{BMC Medical Genomics}{10(Suppl 1)}{27}{2017}{https://bmcmedgenomics.biomedcentral.com/articles/10.1186/s12920-017-0263-4}
+
+\item \PaperEntry{Qike Li$^{*}$, \underline{A.~Grant Schissler}$^{*}$, Vincent Gardeux, Joanne Berghout, Ikbel Achour, Colleen Kenost, Haiquan Li, Hao Helen Zhang and Yves A.~Lussier}{kMEn: analyzing noisy and bidirectional transcriptional pathway responses in single subjects}{Journal of Biomedical Informatics}{66}{}{2017}{http://www.sciencedirect.com/science/article/pii/S1532046416301836}
+
+\item \PaperEntry{\underline{A.~Grant Schissler}, Qike Li, James Chen, Colleen Kenost, Ikbel Achour, Dean Billheimer, Haiquan Li, Walter W.~Piegorsch, and Yves A.~Lussier}{Analysis of aggregated cell-cell statistical distances within pathways unveils therapeutic-resistance mechanisms in circulating tumor cells}{Bioinformatics}{32}{12}{2016}{http://bioinformatics.oxfordjournals.org/content/32/12/i80.full}
+
+\item \PaperEntry{\underline{A.~Grant Schissler}, Vincent Gardeux, Qike Li, Ikbel Achour, Haiquan Li, Walter W.~Piegorsch and Yves A.~Lussier}{Dynamic changes of RNA-sequencing expression for precision medicine: N-of-1-\textit{pathways} Mahalanobis distance within pathways of single subjects predicts breast cancer survival}{Bioinformatics}{31}{12}{2015}{http://bioinformatics.oxfordjournals.org/content/31/12/i293.full}
+
+  $\dagger$ = student under my supervision, * = joint first authorship
+%\end{etaremune}
+\end{enumerate}
+
+%%% Papers under review
+%%% ------------------------------------------------------------
+
+\NewPart{Creative works under review}{}
+\vspace{-7pt}
+% \begin{etaremune}
+\begin{enumerate}
+
+\item \PaperEntry{\underline{A.~Grant Schissler}, Alex Knudson$^{\dagger}$, Richard DL Foote, Tomasz Kozubowski, and Anna Panorska}{Simulating Dependent High-Dimensional Data via the bigsimr R package, with an Application to RNA-sequencing data}{}{Journal of Statistical Software}{}{}{}
+  
+\end{enumerate}
+
+% \NewPart{Creative works near-submission}{}
+% \vspace{-7pt}
+% % \begin{etaremune}
+% 
+% \begin{enumerate}
+%   
+% 
+% \item \PaperEntry{Andrey Sarantsev and \underline{A.~Grant Schissler}}{Partisan Lean Of States:~Electoral College And Popular Vote}{}{Statistics and Public Policy}{}{expected Feb 2020}{}
+%   
+% \item \PaperEntry{Alex Knudson$^{\dagger}$, Allie Scurry$^{\dagger}$, \underline{A.~Grant Schissler}, and Jiang Fang}{A modern approach to Bayesian hierarchical modeling of the psychometric function}{}{Statistical Analysis and Data Mining:~The ASA Data Science Journal}{}{expected May 2020}{}
+% 
+% \item \PaperEntry{\underline{A.~Grant Schissler} and Alex Knudson$^{\dagger}$}{A high-dimensional fully Bayesian multilevel survival analysis to discover prognostic biomarkers for underrepresented patients}{}{Journal of the American Statistical Association}{}{}{}
+% 
+% \item \PaperEntry{Erick Luerken, Alex Knudson$^{\dagger}$, Juli Petereit, \underline{A.~Grant Schissler}}{An empirical Bayesian approach to detecting single-subject differentially expressed genes and pathways for precision oncology}{}{Frontiers in Oncology}{}{}{}
+% 
+%   \item \PaperEntry{\underline{A.~Grant Schissler}, Juli Petereit, and Yves A. Lussier}{Investigating the prognostic value of single-subject differentially expressed genes and pathways}{}{Journal of the American Medical Informatics Association}{}{}{}
+% 
+%   % * = joint first authorship
+%   % * = Not peer reviewed
+%   % \end{etaremune}
+% 
+%   $\dagger$ = student author
+%   
+% \end{enumerate}
+ 
+%%% Papers in preparation
+%%% ------------------------------------------------------------
+
+%% \NewPart{Original articles in preparation}{}
+%% \vspace{-7pt}
+%% % \begin{etaremune}
+%% \begin{enumerate}
+%% 
+%% \item \PaperEntry{\underline{A.~Grant Schissler}, Qike Li, Colleen Kenost and Yves A.~Lussier}{nof1: a software package in R and online tool for single-subject transcriptome analyses via N-of-1-\emph{pathways}}{}{in~preparation}{}{}{}
+%% 
+%%     %% * = Anticipated submission date
+%%   
+%% %\end{etaremune}
+%% \end{enumerate}
+%% 
+%%% Other publications
+%%% ------------------------------------------------------------
+
+\NewPart{Book chapters}{}
+\vspace{-7pt}
+% \begin{etaremune}
+\begin{enumerate}
+
+%\item \PaperEntry{\underline{A.~Grant Schissler}, Qike Li, Colleen Kenost and Yves A.~Lussier}{nof1: a software package in R and online tool for single-subject transcriptome analyses via N-of-1-\emph{pathways}}{}{in~preparation}{}{2016}{}
+
+ \item \PaperEntry{\underline{A.~Grant Schissler}, Hung Nguyen, Tin Nguyen, Juli Petereit, Vincent Gardeux}{Statistical Software}{}{Wiley StatsRef-Statistics Reference Online}{}{2018}{}
+
+\item \PaperEntry{\underline{A.~Grant Schissler} and Alex Knudson$^{\dagger}$}{Software, Statistical}{}{Wiley Handbook of Computational Statistics and Data Science}{}{2020}{}
+
+  %% $\dagger$ = student under my supervision, * = joint first authorship
+  $\dagger$ = student under my supervision
+   
+    %% * = Not peer reviewed  
+%\end{etaremune}
+\end{enumerate}
+
+\clearpage
+%%% Computing Skills
+%%% ------------------------------------------------------------
+\NewPart{Programming/Computer Skills}{}
+\vspace{-7pt}
+
+\begin{itemize}[noitemsep]
+  \begin{multicols}{2}
+\item R
+\item Bash/command line
+\item Python
+\item Julia
+\item SQL
+\item PBS/LSF/slurm scheduling
+\item SPSS
+\item SAS
+\item Mac OS, Windows, Linux
+\item Emacs/lisp
+\item markdown/rmarkdown/Jupyter notebooks
+\item MS office / Excel
+\item Trello / project management
+  \item git
+  \end{multicols}
+\end{itemize}
+
+%%% Awards
+%%% ------------------------------------------------------------
+
+\NewPart{Awards}{}
+\vspace{-7pt}
+
+\begin{itemize}[noitemsep]
+   \item 2019 \href{https://www.thieme-connect.com/products/ejournals/html/10.1055/s-0039-1677945#N67545}{Semi-finalist best paper in Trend 3: Pathway-level versus gene-level analyses for Zaim SR, Li Q, Schissler AG, Lussier YA. Emergence of pathway-level composite biomarkers from converging gene set signals of heterogeneous transcriptomic responses. Pac Symp Biocomput 2018; 23: 484-95.}, Contributions from the 2018 Literature on Bioinformatics and Translational Informatics: Section Editors fo the 2019 IMIA Yearbook Section on Bioinformatics and Translational Informatics.
+    \item 2019 \href{https://http://www.itng.info/}{ITNG 2019 Best Student Paper Award}, ITNG program committee, Xiang Li.
+    \item 2019 \href{https://www.unr.edu/science/student-resources/student-competitions-awards}{Westfall Mentor}, The University of Nevada, Reno, Kyle Murray.
+\item 2019 \href{https://www.unr.edu/nevada-today/news/2019/spring-2019-herz-gold-medalist?utm_source=newsletter051619&utm_medium=email&utm_content=kylemurray&utm_campaign=NevadaWeekly}{Spring 2019 Herz Gold Medalist}, The University of Nevada, Reno, Kyle Murray.
+  \item 2019 \href{https://www.unr.edu/science/student-resources/student-competitions-awards}{Department of Mathematics \& Statistics Westfall Scholar}, The University of Nevada, Reno, Kyle Murray.
+
+\vspace{-7pt}
+\end{itemize}  
+
+\NewPart{Selected presentations}{}
+\vspace{-7pt}
+\begin{enumerate}[noitemsep]
+\item \TalkEntry{City of Hope Cancer Center$^{\dagger}$}{Los Angeles, CA}{Jan 2020}{(Bespoke computational oncology:~How to conduct statistical inference when convention methods fail)}
+\item \TalkEntry{CMSTATS 2019$^{\dagger}$}{London, GB}{Dec 2019}{(On Simulating Ultra High-Dimensional Multivariate Data)}
+\item \TalkEntry{ISMCO 2019}{South Lake Tahoe, NV}{Oct 2019}{(A single-subject method to detect pathways enriched with alternatively spliced genes)}
+\item \TalkEntry{RSS 2019}{Belfast, NI}{Sep 2019}{(On Simulating Ultra High-Dimensional Multivariate Discrete Data)}
+\item \TalkEntry{ESCO 2018$^{\dagger}$}{Pilsen, Czech Republic}{Jun 2018}{(A graphical processing unit accelerated NORmal-To-Anything algorithm for high dimensional multivariate simulation)}
+\item\TalkEntry{JSM 2016}{Chicago IL}{August 2016}{(Testing for differentially expressed pathways from within-subject matched pairs of RNA-seq data sets)}
+  \item\TalkEntry{ISMB 2016}{Orlando FL}{July 2016}{(Statistical distances in circulating tumor cells)}
+\item\TalkEntry{First workshop on Interdisciplinary Statistics}{CIMAT Guanajuato Mexico}{June 2016}{(Statistical informatics for precision medicine)} 
+\item\TalkEntry{ISMB/ECCB 2015}{Dublin}{July 2015}{(N-of-1-\textit{pathways} MD)} 
+
+\end{enumerate}
+
+\NewPart{Activities \& Interests}{}
+\vspace{-7pt}
+
+\begin{itemize}[noitemsep]
+\item Proud parent to rescue dogs and cat / dog training
+\item Enjoy activity hobbies: tennis, skiing, running, hiking, biking, rowing, camping
+\item Road tripping and traveling domestically/abroad
+\item Cooking and eating great food
+ \item Watching TV shows, movies, and live sports 
+ \item Video games / eSports (when time allows...)
+   \item Reading: philosophy, self improvement, and leadership/social skills
+  \end{itemize}
+
+\end{document}
